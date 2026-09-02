@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Göksu'nun Sürprizi — Birlikte Gez</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Giriş/Şifre Ekranı -->
+  <div id="login-overlay" class="overlay">
+    <div class="login-card">
+      <h1>Senin İçin Hazırladım, Göksu ❤️</h1>
+      <p>Hayallerindeki yerlere birlikte gittik gibi hissetmeni istedim. Lütfen şifreyi gir.</p>
+      <input id="pw" type="password" placeholder="Giriş şifresi" autocomplete="off" />
+      <div class="pw-row">
+        <button id="submit-pw">Giriş</button>
+        <button id="play-music-init" class="music-btn">Müziği Başlat</button>
+      </div>
+      <p class="hint">İpucu: sana küçük bir sürpriz hazırladım...</p>
+      <p id="pw-error" class="error" aria-live="polite"></p>
+    </div>
+    <div class="floating-hearts" aria-hidden="true"></div>
+  </div>
+
+  <!-- Ana İçerik -->
+  <main id="app" class="hidden">
+    <header>
+      <div>
+        <h2>Hayal Gezileri</h2>
+        <p class="sub">Gerçek olmasa da, hissetmek gerçek.</p>
+      </div>
+      <div class="owner">Göksu'nun Sürprizi</div>
+    </header>
+
+    <section class="grid">
+      <article class="card" data-title="İsviçre — Alpler" data-image="https://images.unsplash.com/photo-1518684079-3b8f2b0a0c35?auto=format&fit=crop&w=1600&q=80">
+        <div class="card-inner">
+          <h3>İsviçre — Alpler</h3>
+          <p>Karla kaplı doruklar, temiz hava ve el ele yürüyüş.</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Maldivler" data-image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80">
+        <div class="card-inner">
+          <h3>Maldivler</h3>
+          <p>Turkuaz deniz, bembeyaz kumsallar ve gün batımı.</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Romanya — Transilvanya" data-image="https://images.unsplash.com/photo-1508264165352-258a6b0e5e5a?auto=format&fit=crop&w=1600&q=80">
+        <div class="card-inner">
+          <h3>Romanya — Transilvanya</h3>
+          <p>Ortaçağ atmosferi, sisli ormanlar ve gizemli kaleler.</p>
+        </div>
+      </article>
+
+      <article class="card" data-title="Avustralya — Kıyılar" data-image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80">
+        <div class="card-inner">
+          <h3>Avustralya</h3>
+          <p>Uçsuz bucaksız kıyılar, dalgaların sesi ve yeni maceralar.</p>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>Sevgilerle, <strong>Göksu</strong> <span class="heart">❤</span></p>
+    </footer>
+  </main>
+
+  <!-- Modal / Simülasyon Görüntüleme -->
+  <div id="viewer" class="viewer hidden" role="dialog" aria-modal="true">
+    <button id="close-viewer" class="close-btn" aria-label="Kapat">✕</button>
+    <div class="viewer-content">
+      <h3 id="viewer-title"></h3>
+      <div id="panorama" class="panorama"></div>
+      <p id="viewer-desc" class="desc"></p>
+      <div class="viewer-actions">
+        <button id="start-sim">Simülasyonu Başlat</button>
+        <button id="stop-sim" class="secondary">Durdur</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube iframe container (eklenecek butona tıklanınca) -->
+  <div id="yt-player" class="yt-player hidden" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
